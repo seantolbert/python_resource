@@ -72,4 +72,6 @@ print(setF.issuperset(setE)) # False
 # isdisjoint method returns true if there are no duplicates in the second set from first
 print(setE.isdisjoint(setG)) # True
 
-
+# frozen sets are immutable sets
+a = frozenset([1, 2, 3, 4])
+print(a)
