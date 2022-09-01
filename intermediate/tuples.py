@@ -36,3 +36,35 @@ print(my_tuple4.count("yo"))
 
 # finding the index of element (will stop at first found)
 print(my_tuple4.index("yo"))
+
+# slicing works the same as lists
+a = 1, 2, 3, 4, 5, 6, 7
+b = a[3::]
+print(b)
+
+# labelling tuple elements
+name,age,city = my_tuple
+print(name)
+print(age)
+print(city)
+
+# adding the asterisk grabs all the elemnts not obviously labelled
+my_tuple5 = 1, 2, 3, 4, 5
+i1, i2, *i3 = my_tuple5
+print(i3)
+
+# working with tuples over lists can be much 
+# more efficient since they are immutable
+import sys
+my_list = [0, 1, 2, 3, 4, 5]
+my_tuple6 = 0, 1, 2, 3, 4, 5
+print(sys.getsizeof(my_list), "bytes")
+print(sys.getsizeof(my_tuple6), "bytes")
+# you will notice that list file sizes are larger
+
+# using the timeit function to measuer time for creating lists vs tuples
+import timeit
+print(timeit.timeit(stmt="[0, 1, 2, 3, 4, 5]", number=1000000))
+print(timeit.timeit(stmt="(0, 1, 2, 3, 4, 5)", number=1000000))
+# list took much longer to recreate
+
