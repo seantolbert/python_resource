@@ -37,3 +37,39 @@ print(u)
 # intersection creates a new set of duplicated numbers between 2 sets
 i = odds.intersection(primes)
 print(i)
+
+setA = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+setB = {1, 2, 3, 10, 11, 12}
+# difference creates a new set with what is not duplicated between sets
+diff = setA.difference(setB)
+print(diff)
+# symetric difference method would return all the numbers that 
+# are not found in the other set and vice versa
+symdiff = setA.symmetric_difference(setB)
+print(symdiff)
+
+setC = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+setD = {1, 2, 3, 10, 11, 12}
+
+setC.intersection_update(setD)
+print(setC)
+print(setD)
+print('overlap', setC)
+
+# update method adds both sets together without duplicates
+setA.update(setB)
+print(setA)
+
+setE = {1, 2, 3, 4, 5, 6}
+setF = {1, 2, 3}
+setG = {7, 8}
+# issubset method returns true if all elements of first set are found in second set
+print(setE.issubset(setF)) # False
+print(setF.issubset(setE)) # True
+# issuperset method is the opposite
+print(setE.issuperset(setF)) # True
+print(setF.issuperset(setE)) # False
+# isdisjoint method returns true if there are no duplicates in the second set from first
+print(setE.isdisjoint(setG)) # True
+
+
